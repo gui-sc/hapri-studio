@@ -1,6 +1,5 @@
 import React from 'react';
-import { Layers, Lightbulb, Brain, LineChart } from 'lucide-react';
-
+import { FaLayerGroup as Layers, FaLightbulb as Lightbulb, FaBrain as Brain, FaChartLine as LineChart } from 'react-icons/fa';
 const differentials = [
   {
     icon: <Brain size={40} />,
@@ -32,7 +31,7 @@ export function Differentials() {
           key={index}
           className="p-6 rounded-lg bg-white shadow-lg hover:shadow-xl transition-shadow"
         >
-          <div className="text-purple-600 mb-4">{differential.icon}</div>
+          <div className="text-orange-600 mb-4">{differential.icon}</div>
           <h3 className="text-xl font-semibold mb-2">{differential.title}</h3>
           <p className="text-gray-600">{differential.description}</p>
         </div>

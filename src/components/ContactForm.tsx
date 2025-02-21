@@ -10,7 +10,7 @@ export function ContactForm() {
         <input
           type="text"
           id="name"
-          className="w-full px-4 py-2 rounded-lg bg-gray-600 border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:outline-none"
+          className="w-full px-4 py-2 rounded-lg bg-gray-600 border border-gray-700 focus:border-orange-500 focus:ring-2 focus:ring-orange-500 focus:outline-none"
           required
         />
       </div>
@@ -22,7 +22,7 @@ export function ContactForm() {
         <input
           type="email"
           id="email"
-          className="w-full px-4 py-2 rounded-lg bg-gray-600 border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:outline-none"
+          className="w-full px-4 py-2 rounded-lg bg-gray-600 border border-gray-700 focus:border-orange-500 focus:ring-2 focus:ring-orange-500 focus:outline-none"
           required
         />
       </div>
@@ -34,7 +34,7 @@ export function ContactForm() {
         <textarea
           id="message"
           rows={4}
-          className="w-full px-4 py-2 rounded-lg bg-gray-600 border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:outline-none"
+          className="w-full px-4 py-2 rounded-lg bg-gray-600 border border-gray-700 focus:border-orange-500 focus:ring-2 focus:ring-orange-500 focus:outline-none"
           required
         ></textarea>
       </div>

@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Menu, X, Instagram, Linkedin, MessageCircle, Ambulance as BehanceLogo } from 'lucide-react';
 import { ContactForm } from './components/ContactForm';
 import { PortfolioGallery } from './components/PortfolioGallery';
 import { Differentials } from './components/Differentials';
 import { motion, AnimatePresence } from 'framer-motion';
+import {FaXmark as X} from 'react-icons/fa6'
+import { FaBars as Menu, FaInstagram as Instagram, FaWhatsapp as Whatsapp, FaBehance as Behance } from 'react-icons/fa';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -48,7 +49,7 @@ function App() {
               <button
                 key={section}
                 onClick={() => scrollToSection(section)}
-                className="text-5xl font-extrabold hover:text-purple-300 transition-colors"
+                className="text-5xl font-extrabold hover:text-orange-300 transition-colors"
               >
                 {section.charAt(0).toUpperCase() + section.slice(1)}
               </button>
@@ -111,17 +112,14 @@ function App() {
             <div className="w-full flex flex-col justify-center items-center space-y-6">
               <h3 className="text-2xl font-semibold mb-4">Conecte-se Conosco</h3>
               <div className="flex space-x-6">
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition-colors">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-orange-400 transition-colors">
                   <Instagram size={32} />
                 </a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition-colors">
-                  <Linkedin size={32} />
+                <a href="https://behance.net" target="_blank" rel="noopener noreferrer" className="hover:text-orange-400 transition-colors">
+                  <Behance size={32} />
                 </a>
-                <a href="https://behance.net" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition-colors">
-                  <BehanceLogo size={32} />
-                </a>
-                <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition-colors">
-                  <MessageCircle size={32} />
+                <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="hover:text-orange-400 transition-colors">
+                  <Whatsapp size={32} />
                 </a>
               </div>
             </div>
