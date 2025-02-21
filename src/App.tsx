@@ -3,6 +3,7 @@ import { Menu, X, Instagram, Linkedin, MessageCircle, Ambulance as BehanceLogo }
 import { ContactForm } from './components/ContactForm';
 import { PortfolioGallery } from './components/PortfolioGallery';
 import { Differentials } from './components/Differentials';
+import { motion, AnimatePresence } from 'framer-motion';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,37 +17,57 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
-      {/* Navigation */}
-      <nav className="fixed w-full bg-gray-900/95 backdrop-blur-sm z-50">
+    <div className="min-h-screen bg-gray-700 text-white relative">
+      <nav className="fixed w-full bg-gray-700/95 backdrop-blur-sm z-50">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="text-2xl font-bold">NOVA</div>
-          <div className="lg:hidden">
-            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="p-2">
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          <div className="text-2xl font-bold text-white">
+            <img src="./logo.png" alt="Logo Hapri Studio" className='w-10' />
+          </div>
+          <div>
+            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="p-2 text-white">
+              {isMenuOpen ? <X size={32} /> : <Menu size={32} />}
             </button>
           </div>
-          <div className={`${isMenuOpen ? 'fixed inset-0 bg-gray-900 flex flex-col items-center justify-center space-y-8 lg:hidden' : 'hidden'} lg:flex lg:items-center lg:space-x-8`}>
-            {isMenuOpen && <X className="absolute top-6 right-6" size={24} onClick={() => setIsMenuOpen(false)} />}
-            <button onClick={() => scrollToSection('home')} className="hover:text-purple-400 transition-colors">Home</button>
-            <button onClick={() => scrollToSection('about')} className="hover:text-purple-400 transition-colors">Sobre</button>
-            <button onClick={() => scrollToSection('portfolio')} className="hover:text-purple-400 transition-colors">Portfólio</button>
-            <button onClick={() => scrollToSection('differentials')} className="hover:text-purple-400 transition-colors">Diferenciais</button>
-            <button onClick={() => scrollToSection('contact')} className="hover:text-purple-400 transition-colors">Contato</button>
-          </div>
         </div>
-      </nav>
+    </nav>
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial={{ y: '-100%' }}
+            animate={{ y: 0 }}
+            exit={{ y: '-100%' }}
+            transition={{ duration: 0.5, ease: 'easeInOut' }}
+            className="fixed inset-0 bg-gradient-to-br from-gray-900 via-gray-600 to-gray-900 text-white flex flex-col items-center justify-center space-y-16 z-50"
+          >
+            <X
+              className="absolute top-6 right-6 text-white cursor-pointer"
+              size={36}
+              onClick={() => setIsMenuOpen(false)}
+            />
+            {['home', 'about', 'portfolio', 'differentials', 'contact'].map((section) => (
+              <button
+                key={section}
+                onClick={() => scrollToSection(section)}
+                className="text-5xl font-extrabold hover:text-purple-300 transition-colors"
+              >
+                {section.charAt(0).toUpperCase() + section.slice(1)}
+              </button>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+          
 
       {/* Hero Section */}
-      <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 pt-16">
+      <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-gray-600 to-gray-900 pt-16">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Transformamos Ideias em Resultados Digitais
+          <img src="./nome.png" alt="Logo Hapri Studio" className="w-60 lg:w-80 mx-auto mb-4" />
+          <h1 className="text-2xl md:text-4xl font-bold mb-6">
+          Transforme sua marca, aumente seu engajamento e conquiste mais clientes com estratégias criativas e eficazes.
           </h1>
-          <p className="text-xl mb-8 text-gray-300">
-            Marketing digital que impulsiona seu negócio ao próximo nível
-          </p>
-          <button onClick={() => scrollToSection('contact')} className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-full text-lg font-semibold transition-colors">
+          <button onClick={() => scrollToSection('contact')} 
+          className="bg-gradient-to-br from-yellow-800 via-yellow-300 to-yellow-800 hover:bg-gradient-to-tr hover:from-yellow-800 hover:via-yellow-500 hover:to-yellow-800 text-white px-8 py-3 rounded-full text-lg font-semibold shadow-lg">
             Fale Comigo
           </button>
         </div>
@@ -55,21 +76,17 @@ function App() {
       {/* About Section */}
       <section id="about" className="py-20 bg-gray-100 text-gray-900">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
-            Quem Somos
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">Nós somos a Hapri Studio</h2>
           <p className="text-xl text-center max-w-3xl mx-auto">
-            Somos uma agência de marketing digital apaixonada por criar experiências únicas e resultados extraordinários. Com uma equipe de especialistas criativos, transformamos desafios em oportunidades e ideias em realidade.
+          Uma agencia de Marketing e Social Media, que busca a estratégia perfeita para alcançar os resultados que a sua empresa necessita!
           </p>
         </div>
       </section>
 
       {/* Portfolio Section */}
-      <section id="portfolio" className="py-20 bg-gray-900">
+      <section id="portfolio" className="py-20 bg-gray-700">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            Nosso Portfólio
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Nosso Portfólio</h2>
           <PortfolioGallery />
         </div>
       </section>
@@ -77,27 +94,21 @@ function App() {
       {/* Differentials Section */}
       <section id="differentials" className="py-20 bg-gray-100 text-gray-900">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            Nossos Diferenciais
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Nossos Diferenciais</h2>
           <Differentials />
         </div>
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-gray-900">
+      <section id="contact" className="py-20 bg-gray-700">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-            Vamos Criar Algo Incrível Juntos
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">A sua empresa precisa se posicionar da maneira correta!</h2>
           <p className="text-xl text-center text-gray-300 mb-12">
-            Transforme sua presença digital hoje mesmo
+          Entre em contato
           </p>
-          
-          <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          <div className="grid gap-12 w-full sm:w-1/2 mx-auto">
             <ContactForm />
-            
-            <div className="flex flex-col justify-center items-center md:items-start space-y-6">
+            <div className="w-full flex flex-col justify-center items-center space-y-6">
               <h3 className="text-2xl font-semibold mb-4">Conecte-se Conosco</h3>
               <div className="flex space-x-6">
                 <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition-colors">

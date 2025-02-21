@@ -1,42 +1,32 @@
 import React from 'react';
-import { Rocket, Target, Users, Lightbulb, BarChart, Clock } from 'lucide-react';
+import { Layers, Lightbulb, Brain, LineChart } from 'lucide-react';
 
 const differentials = [
   {
-    icon: <Rocket size={40} />,
+    icon: <Brain size={40} />,
     title: 'Estratégia Personalizada',
-    description: 'Desenvolvemos estratégias únicas alinhadas com seus objetivos de negócio'
-  },
-  {
-    icon: <Target size={40} />,
-    title: 'Resultados Mensuráveis',
-    description: 'Acompanhamento detalhado de métricas e KPIs para otimização contínua'
-  },
-  {
-    icon: <Users size={40} />,
-    title: 'Equipe Especializada',
-    description: 'Profissionais experientes e dedicados em cada área do marketing digital'
+    description: 'Desenvolvimento de estratégias de social media sob medida, alinhadas com os objetivos e necessidades específicas de cada cliente.'
   },
   {
     icon: <Lightbulb size={40} />,
-    title: 'Criatividade Inovadora',
-    description: 'Soluções criativas que destacam sua marca no mercado'
+    title: 'Criatividade e inovação',
+    description: 'Capacidade de trazer novas ideias e abordagens criativas para o conteúdo, mantendo a marca em destaque nas redes sociais.'
   },
   {
-    icon: <BarChart size={40} />,
-    title: 'Analytics Avançado',
-    description: 'Análise profunda de dados para tomada de decisões estratégicas'
+    icon: <LineChart size={40} />,
+    title: 'Análise de métricas e insights',
+    description: 'Profunda compreensão das métricas de desempenho nas redes sociais, permitindo análises precisas e ajustes estratégicos.'
   },
   {
-    icon: <Clock size={40} />,
-    title: 'Agilidade',
-    description: 'Processos otimizados para entregas rápidas e eficientes'
-  }
+    icon: <Layers size={40} />,
+    title: 'Acompanhamento das tendências',
+    description: 'Acompanhamento das últimas tendências e mudanças, aplicando-as de forma oportuna para maximizar seu impacto online.'
+  },
 ];
 
 export function Differentials() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
       {differentials.map((differential, index) => (
         <div
           key={index}

@@ -10,7 +10,7 @@ export function ContactForm() {
         <input
           type="text"
           id="name"
-          className="w-full px-4 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:outline-none"
+          className="w-full px-4 py-2 rounded-lg bg-gray-600 border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:outline-none"
           required
         />
       </div>
@@ -22,7 +22,7 @@ export function ContactForm() {
         <input
           type="email"
           id="email"
-          className="w-full px-4 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:outline-none"
+          className="w-full px-4 py-2 rounded-lg bg-gray-600 border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:outline-none"
           required
         />
       </div>
@@ -34,14 +34,14 @@ export function ContactForm() {
         <textarea
           id="message"
           rows={4}
-          className="w-full px-4 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:outline-none"
+          className="w-full px-4 py-2 rounded-lg bg-gray-600 border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:outline-none"
           required
         ></textarea>
       </div>
       
       <button
         type="submit"
-        className="w-full bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
+        className="w-full bg-gradient-to-br from-yellow-800 via-yellow-300 to-yellow-800 hover:bg-gradient-to-tr hover:from-yellow-800 hover:via-yellow-500 hover:to-yellow-800 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
       >
         Enviar Mensagem
       </button>
