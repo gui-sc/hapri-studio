@@ -3,58 +3,54 @@ import React, { useState } from 'react';
 const portfolioItems = [
   {
     type: 'image',
-    title: 'Campanha Digital',
-    url: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
+    title: 'Vestuário',
+    urls: ['./vestuario.png']
   },
   {
     type: 'image',
-    title: 'Design Gráfico',
-    url: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
+    title: 'Team Manaus',
+    urls: ['./esportes.png']
+  },
+  {
+    type: 'image',
+    title: 'Perfor',
+    urls: ['./divulgacao.png', './empresarial.png','./anuncios.png', './dicas.png']
   },
   {
     type: 'video',
     title: 'Motion Design',
-    url: 'https://player.vimeo.com/video/123456789'
+    urls: ['https://player.vimeo.com/video/123456789']
   },
-  {
-    type: 'image',
-    title: 'Branding',
-    url: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
-  },
-  {
-    type: 'image',
-    title: 'Social Media',
-    url: 'https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
-  },
-  {
-    type: 'image',
-    title: 'Web Design',
-    url: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
-  }
 ];
 
 export function PortfolioGallery() {
   const [selectedItem, setSelectedItem] = useState<null | typeof portfolioItems[0]>(null);
+  const [index, setIndex] = useState(0);
 
+  const handleSelectItem = (item: typeof portfolioItems[0]) => {
+    setSelectedItem(item);
+    setIndex(0);
+  }
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div className='w-full flex justify-center items-center flex-col'>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {portfolioItems.map((item, index) => (
           <div
             key={index}
             className="relative group cursor-pointer overflow-hidden rounded-lg"
-            onClick={() => setSelectedItem(item)}
+            onClick={() => handleSelectItem(item)}
           >
             {item.type === 'image' ? (
               <img
-                src={item.url}
+                src={item.urls[0]}
                 alt={item.title}
-                className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+                className="w-full h-96 object-cover transition-transform duration-300 group-hover:scale-110"
               />
             ) : (
               <iframe
-                src={item.url}
-                className="w-full h-64"
+                src={item.urls[0]}
+                className="w-full h-96"
                 frameBorder="0"
                 allow="autoplay; fullscreen"
                 allowFullScreen
@@ -67,22 +63,31 @@ export function PortfolioGallery() {
         ))}
       </div>
 
-      {/* Fullscreen Modal */}
+      {/* Fullscreen Modal com botões para passar as fotos*/}
       {selectedItem && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4"
+          className="h-screen fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-around p-4"
           onClick={() => setSelectedItem(null)}
         >
-          <div className="max-w-6xl w-full max-h-[90vh]">
+          <button
+            className="text-white text-3xl"
+            onClick={(e) => {
+              e.stopPropagation();
+              if(index > 0) setIndex(index-1)
+            }}
+          >
+            {'<'}
+          </button>
+          <div className="max-w-6xl w-auto max-h-[100vh]">
             {selectedItem.type === 'image' ? (
               <img
-                src={selectedItem.url}
+                src={selectedItem.urls[index]}
                 alt={selectedItem.title}
-                className="w-full h-full object-contain"
+                className="w-auto max-h-[95vh] object-contain"
               />
             ) : (
               <iframe
-                src={selectedItem.url}
+                src={selectedItem.urls[index]}
                 className="w-full h-[80vh]"
                 frameBorder="0"
                 allow="autoplay; fullscreen"
@@ -90,8 +95,19 @@ export function PortfolioGallery() {
               />
             )}
           </div>
+          <button
+            className="text-white text-3xl"
+            onClick={(e) => {
+              e.stopPropagation();
+              if((index +1) < selectedItem.urls.length) setIndex(index+1)
+            }}
+          >
+            {'>'}
+          </button>
         </div>
       )}
+
+    </div>
     </>
   );
 }
