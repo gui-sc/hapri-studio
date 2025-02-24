@@ -1,5 +1,7 @@
 import React from 'react';
 import { FaLayerGroup as Layers, FaLightbulb as Lightbulb, FaBrain as Brain, FaChartLine as LineChart } from 'react-icons/fa';
+import {motion} from 'framer-motion';
+
 const differentials = [
   {
     icon: <Brain size={40} />,
@@ -27,14 +29,18 @@ export function Differentials() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
       {differentials.map((differential, index) => (
-        <div
+        <motion.div
           key={index}
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: index * 0.2 }}
           className="p-6 rounded-lg bg-white shadow-lg hover:shadow-xl transition-shadow"
         >
           <div className="text-orange-600 mb-4">{differential.icon}</div>
           <h3 className="text-xl font-semibold mb-2">{differential.title}</h3>
           <p className="text-gray-600">{differential.description}</p>
-        </div>
+        </motion.div>
       ))}
     </div>
   );

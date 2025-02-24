@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { motion } from 'framer-motion';
 const portfolioItems = [
   {
     type: 'image',
@@ -36,16 +36,21 @@ export function PortfolioGallery() {
     <div className='w-full flex justify-center items-center flex-col'>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {portfolioItems.map((item, index) => (
-          <div
+          <motion.div
             key={index}
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: index * 0.2 }}
             className="relative group cursor-pointer overflow-hidden rounded-lg"
             onClick={() => handleSelectItem(item)}
           >
+            {/* focar na parte de cima da imagem */}
             {item.type === 'image' ? (
               <img
                 src={item.urls[0]}
                 alt={item.title}
-                className="w-full h-96 object-cover transition-transform duration-300 group-hover:scale-110"
+                className="w-full h-96 object-cover transition-transform duration-300 group-hover:scale-110 object-top"
               />
             ) : (
               <iframe
@@ -59,7 +64,7 @@ export function PortfolioGallery() {
             <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
               <h3 className="text-white text-xl font-semibold">{item.title}</h3>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
 

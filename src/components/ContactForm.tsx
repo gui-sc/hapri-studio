@@ -41,7 +41,7 @@ export function ContactForm() {
       
       <button
         type="submit"
-        className="w-full bg-gradient-to-br from-yellow-800 via-yellow-300 to-yellow-800 hover:bg-gradient-to-tr hover:from-yellow-800 hover:via-yellow-500 hover:to-yellow-800 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
+        className="w-full bg-orange-400 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
       >
         Enviar Mensagem
       </button>
