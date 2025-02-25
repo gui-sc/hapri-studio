@@ -102,7 +102,7 @@ function App() {
                             alt="Logo Hapri Studio"
                             className="w-60 lg:w-80 mx-auto mb-4"
                         />
-                        <h1 className="text-2xl md:text-4xl font-bold mb-6">
+                        <h1 className="text-xl md:text-4xl font-bold mb-6">
                             Transforme sua marca, aumente seu engajamento e
                             conquiste mais clientes com estratégias criativas e
                             eficazes.
@@ -114,7 +114,7 @@ function App() {
                         >
                             <button
                                 onClick={() => scrollToSection("contato")}
-                                className="relative overflow-hidden text-white px-4 py-3 rounded-full text-lg font-semibold transition-all duration-700 group w-36  "
+                                className="relative overflow-hidden text-white px-4 py-3 rounded-full text-lg font-semibold transition-all duration-700 group w-auto md:w-36"
                             >
                                 <span className="absolute inset-y-0 left-0 bg-orange-500 rounded-e-full w-1/3 transition-all duration-700 group-hover:w-full"></span>
                                 <span className="relative z-10">
