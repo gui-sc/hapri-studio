@@ -139,7 +139,7 @@ function App() {
                         Nós somos a Hapri Studio
                     </h2>
                     <p className="text-xl text-center max-w-3xl mx-auto">
-                        Uma agencia de Marketing e Social Media, que busca a
+                        Uma agência de Marketing e Social Media, que busca a
                         estratégia perfeita para alcançar os resultados que a
                         sua empresa necessita!
                     </p>
@@ -173,7 +173,7 @@ function App() {
             </section>
 
             {/* contato Section */}
-            <section id="contato" className="py-20 bg-gray-700">
+            <section id="contato" className="pt-20 pb-5 bg-gray-700">
                 <motion.div
                     className="container mx-auto px-4"
                     initial={{ opacity: 0, y: 20 }}
@@ -184,18 +184,18 @@ function App() {
                     <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
                         A sua empresa precisa se posicionar da maneira correta!
                     </h2>
-                    <p className="text-xl text-center text-gray-300 mb-12">
+                    <p className="text-xl text-center text-gray-300 mb-4">
                         Entre em contato
                     </p>
-                    <div className="grid gap-12 w-full sm:w-1/2 mx-auto">
+                    <div className="grid gap-6 w-full sm:w-1/2 mx-auto">
                         <ContactForm />
-                        <div className="w-full flex flex-col justify-center items-center space-y-6">
-                            <h3 className="text-2xl font-semibold mb-4">
+                        <div className="w-full flex flex-col justify-center items-center space-y-3">
+                            <h3 className="text-2xl font-semibold mb-1">
                                 Conecte-se Conosco
                             </h3>
                             <div className="flex space-x-6">
                                 <a
-                                    href="https://instagram.com"
+                                    href="https://www.instagram.com/gvieira_gomes/"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="hover:text-orange-400 transition-colors"
@@ -203,7 +203,7 @@ function App() {
                                     <Instagram size={32} />
                                 </a>
                                 <a
-                                    href="https://behance.net"
+                                    href="https://www.behance.net/Gustavovieirag"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="hover:text-orange-400 transition-colors"
@@ -211,7 +211,7 @@ function App() {
                                     <Behance size={32} />
                                 </a>
                                 <a
-                                    href="https://wa.me/1234567890"
+                                    href="https://wa.me/+5548996040786"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="hover:text-orange-400 transition-colors"
