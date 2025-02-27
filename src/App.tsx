@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { ContactForm } from "./components/ContactForm";
-import { PortfolioGallery } from "./components/PortfolioGallery";
+import { ContactCTA } from "./components/ContactForm";
 import { Differentials } from "./components/Differentials";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaXmark as X } from "react-icons/fa6";
@@ -10,6 +9,7 @@ import {
     FaWhatsapp as Whatsapp,
     FaBehance as Behance,
 } from "react-icons/fa";
+import { Numbers } from "./components/Numbers";
 
 const fadeIn = {
     initial: { opacity: 0, y: 20 },
@@ -29,8 +29,8 @@ function App() {
     };
 
     return (
-        <div className="min-h-screen bg-gray-700 text-white relative">
-            <nav className="fixed w-full bg-gray-700/95 backdrop-blur-sm z-50">
+        <div className="min-h-screen bg-[#1d1d1d] text-white relative">
+            <nav className="fixed w-full bg-[#1d1d1d]/95 backdrop-blur-sm z-50">
                 <div className="container mx-auto px-4 py-4 flex justify-between items-center">
                     <div className="text-2xl font-bold text-white">
                         <img
@@ -56,7 +56,7 @@ function App() {
                         animate={{ y: 0 }}
                         exit={{ y: "-100%" }}
                         transition={{ duration: 0.5, ease: "easeInOut" }}
-                        className="fixed inset-0 bg-gradient-to-br from-gray-900 via-gray-600 to-gray-900 text-white flex flex-col items-center justify-center space-y-16 z-50"
+                        className="fixed inset-0 bg-gradient-to-br from-[#1d1d1d] via-[#363636] to-[#1d1d1d] text-white flex flex-col items-center justify-center space-y-16 z-50"
                     >
                         <X
                             className="absolute top-6 right-6 text-white cursor-pointer"
@@ -66,7 +66,7 @@ function App() {
                         {[
                             "home",
                             "sobre",
-                            "portfolio",
+                            "resultados",
                             "diferenciais",
                             "contato",
                         ].map((section) => (
@@ -86,7 +86,7 @@ function App() {
             {/* Hero Section com animação de entrada */}
             <section
                 id="home"
-                className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-gray-600 to-gray-900 pt-16 "
+                className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#1d1d1d] via-[#363636] to-[#1d1d1d] pt-16 "
             >
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -146,23 +146,10 @@ function App() {
                 </motion.div>
             </section>
 
-            {/* Portfolio Section */}
-            <section id="portfolio" className="py-20 bg-gray-700">
-                <div className="container mx-auto px-4">
-                    <h2 className="text-3xl md:text-4xl font-bold text-center mb-2">
-                        Nosso Portfólio
-                    </h2>
-                    <p className="text-xl sm:text-2xl font-semibold text-center mb-12">
-                        Clique para ampliar
-                    </p>
-                    <PortfolioGallery />
-                </div>
-            </section>
-
             {/* diferenciais Section */}
             <section
                 id="diferenciais"
-                className="py-20 bg-gray-100 text-gray-900"
+                className="py-20  text-white bg-[#1d1d1d]"
             >
                 <div className="container mx-auto px-4">
                     <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
@@ -171,9 +158,31 @@ function App() {
                     <Differentials />
                 </div>
             </section>
+            <section id="resultados" className="py-20 text-[#1d1d1d] bg-gray-100">
+                <div className="container mx-auto px-4">
+                    <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+                        Nossos Resultados
+                    </h2>
+                    <Numbers />
+                </div>
+            </section>
+
+            {/* Portfolio Section */}
+            {/* <section id="portfolio" className="py-20 bg-[#1d1d1d]">
+                <div className="container mx-auto px-4">
+                    <h2 className="text-3xl md:text-4xl font-bold text-center mb-2">
+                        Nosso Portfólio
+                    </h2>
+                    <p className="text-lg sm:text-xl font-semibold text-center mb-12">
+                        Clique para visualizar
+                    </p>
+                    <PortfolioGallery />
+                </div>
+            </section> */}
+
 
             {/* contato Section */}
-            <section id="contato" className="pt-20 pb-5 bg-gray-700">
+            <section id="contato" className="pt-20 pb-5 bg-[#1d1d1d]">
                 <motion.div
                     className="container mx-auto px-4"
                     initial={{ opacity: 0, y: 20 }}
@@ -184,11 +193,8 @@ function App() {
                     <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
                         A sua empresa precisa se posicionar da maneira correta!
                     </h2>
-                    <p className="text-xl text-center text-gray-300 mb-4">
-                        Entre em contato
-                    </p>
                     <div className="grid gap-6 w-full sm:w-1/2 mx-auto">
-                        <ContactForm />
+                        <ContactCTA />
                         <div className="w-full flex flex-col justify-center items-center space-y-3">
                             <h3 className="text-2xl font-semibold mb-1">
                                 Conecte-se Conosco
