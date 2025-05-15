@@ -161,7 +161,7 @@ function App() {
             <section id="resultados" className="pt-10 pb-5 text-[#1d1d1d] bg-gray-100">
                 <div className="container mx-auto px-4">
                     <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-                        Nossos Resultados
+                        Nossos Clientes
                     </h2>
                     <ClientGrid />
                     <Numbers />

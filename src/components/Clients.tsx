@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion';
 
 const clientLogos = [
-  { logo: '/perfor.png', name: ' 1' },
-  { logo: '/gomes.png', name: ' 2' },
-  { logo: '/perola.png', name: ' 3' },
-  { logo: '/principios.png', name: ' 4' },
-  { logo: '/tasse.png', name: ' 5' },
-  { logo: '/uzi.png', name: 'Uzi' },
+  { logo: '/perfor.png', name: 'Perfor' },
+  { logo: '/gomes.png', name: 'Padaria Gomes' },
+  { logo: '/perola.png', name: 'Pérola Acessórios' },
+  { logo: '/principios.png', name: 'Princípios' },
+  { logo: '/tasse.png', name: 'Tasse' },
+  { logo: '/uzi.png', name: 'Uzi Supply' },
 ];
 
 export function ClientGrid() {
@@ -24,7 +24,7 @@ export function ClientGrid() {
           <img
             src={client.logo}
             alt={client.name}
-            className="h-16 object-contain"
+            className="h-20 lg:h-24 object-contain"
           />
         </motion.div>
       ))}
