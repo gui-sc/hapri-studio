@@ -42,7 +42,7 @@ const AnimatedNumber = ({ value, prefix, suffix, isVisible }: {
 
 export function Numbers() {
   return (
-    <div className='w-full flex justify-center items-center flex-wrap gap-8 p-8'>
+    <div className='w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-items-center gap-8 p-8'>
       {stats.map((stat, index) => {
         const ref = React.useRef(null);
         const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -54,7 +54,7 @@ export function Numbers() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: index * 0.05 }}
-            className='text-center text-[#1d1d1d] pb-2 rounded-lg '
+            className='text-center text-[#1d1d1d] pb-2 rounded-lg'
           >
             <p className='text-3xl font-bold'>
               <AnimatedNumber value={stat.value} prefix={stat.prefix} suffix={stat.suffix} isVisible={isInView} />
