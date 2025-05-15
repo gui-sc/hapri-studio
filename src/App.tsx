@@ -10,6 +10,7 @@ import {
     FaBehance as Behance,
 } from "react-icons/fa";
 import { Numbers } from "./components/Numbers";
+import { ClientGrid } from "./components/Clients";
 
 const fadeIn = {
     initial: { opacity: 0, y: 20 },
@@ -158,11 +159,12 @@ function App() {
                     <Differentials />
                 </div>
             </section>
-            <section id="resultados" className="py-20 text-[#1d1d1d] bg-gray-100">
+            <section id="resultados" className="pt-10 pb-5 text-[#1d1d1d] bg-gray-100">
                 <div className="container mx-auto px-4">
                     <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
                         Nossos Resultados
                     </h2>
+                    <ClientGrid />
                     <Numbers />
                 </div>
             </section>

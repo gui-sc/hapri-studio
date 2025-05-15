@@ -54,12 +54,12 @@ export function Numbers() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: index * 0.05 }}
-            className='text-center text-[#1d1d1d] bg-white p-6 rounded-lg shadow-lg w-64'
+            className='text-center text-[#1d1d1d] pb-2 rounded-lg '
           >
             <p className='text-3xl font-bold'>
               <AnimatedNumber value={stat.value} prefix={stat.prefix} suffix={stat.suffix} isVisible={isInView} />
             </p>
-            <p className='text-lg mt-2'>{stat.label}</p>
+            <p className='text-lg'>{stat.label}</p>
           </motion.div>
         );
       })}
