@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { ContactCTA } from "./components/ContactForm";
 import { Differentials } from "./components/Differentials";
 import { motion, AnimatePresence } from "framer-motion";
@@ -7,7 +7,6 @@ import {
     FaBars as Menu,
     FaInstagram as Instagram,
     FaWhatsapp as Whatsapp,
-    FaBehance as Behance,
 } from "react-icons/fa";
 import { Numbers } from "./components/Numbers";
 import { ClientGrid } from "./components/Clients";
@@ -209,14 +208,6 @@ function App() {
                                     className="hover:text-orange-400 transition-colors"
                                 >
                                     <Instagram size={32} />
-                                </a>
-                                <a
-                                    href="https://www.behance.net/Gustavovieirag"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="hover:text-orange-400 transition-colors"
-                                >
-                                    <Behance size={32} />
                                 </a>
                                 <a
                                     href="https://wa.me/+5548996040786"
