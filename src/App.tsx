@@ -218,6 +218,24 @@ function App() {
                                     <Whatsapp size={32} />
                                 </a>
                             </div>
+                            {/* todos os direitos */}
+                            <div className="text-center flex flex-col items-center">
+                                <p className="text-sm text-gray-400 mt-4">
+                                    © {new Date().getFullYear()} Hapri Studio. Todos os direitos
+                                    reservados.
+                                </p>
+                                <p className="text-sm text-gray-400">
+                                    Desenvolvido por{" "}
+                                    <a
+                                        href="https://guilhermesilveira.dev"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-white hover:text-orange-400"
+                                    >
+                                        Guilherme Silveira
+                                    </a>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </motion.div>
